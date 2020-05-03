@@ -1,9 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Project 개발 배경
+ 현대 사회에서 이슈화 되는 사건이 부쩍 늘면서 국민청원을 통해 모두의 노력에 힘입어 소수의 사람들도 인권을 보장 받을 수 있는 긍정적인 국민의식을 기를 수 있었다. 그러한 과정 속에 보탬이 되고자 우리는 함께 생각을 공유하고, 동참의지를 기르며 전파할 수 있도록 실시간 소통의 장을 만들어 보탬이 되어주는 공간을 제공, 사회적 운동에 동참할 수 있도록 도모함이 필요했다.
 
-## Available Scripts
+- Project 개발 목표
+ 이슈화가 되는 기사에서 공통적으로 들어가는 키워드를 색출하여 해당 키워드의 영향력을 파악한 뒤, 사람에 의해서가 아닌 서비스 자체로 채팅방을 개설하며 닫을 수 있는 채팅방 개설을 목표로 한다. 계속 이슈화 되는 키워드 및 키워드 집합에 한해서 채팅방은 스스로 생성되며, 생성된 채팅방에서 영향력이 떨어지는 키워드를 인식해 스스로 닫을 수 있도록 한다. 계속 이슈화가 되며 언급되는 키워드에 한해서 채팅방은 유지가 될 수 있도록 채팅방에 생명을 불어넣을 수 있도록 구현한다.
+ 위에서 언급한 영향력 있는 키워드의 경우 기사에서 많이 노출된 키워드를 탐색하여 우선순위를 매우며, 시간이 지나 빈도수가 적어짐에 따라 영향력이 떨어지는 키워드의 경우 우선순위에서 밀려나도록 구현한다. 개설된 채팅방은 생성과 동시에 채팅방 유지기간이 정해지며 시간이 지나 이슈화 되는 키워드에 한해서 유지시간을 늘릴 수 있도록 한다.
+ 서비스 운영 시, 익명의 참여자를 허용하게 되면 선동과 광고로 채팅방의 존재 가치를 떨어뜨릴 수 있다. 사용자 정보는 아이디만을 공개하여, 타인이 상대방의 인적사항을 조사할 수는 없지만 ‘신고하기’를 통해 접수를 받도록 진행한다. 관리자는 해당 신고를 접수받고 내용을 확인하여 서비스 이용자 모두에게 공개되는 불이익을 넣어주도록 한다. 불이익이라 함은 타인이 상대방의 인적사항을 확인할 방법은 없지만, 누적된 신고사항과 내용을 확인할 수 있게 하여 신빙성을 증명할 수 있도록 서비스를 제공한다. 신고 누적에 따라 재재를 가하도록 한다.
 
-In the project directory, you can run:
-
+ - project 개발에 따른 기대효과
+ 작은 힘이 세상을 움직인다. 소수의 힘만으로 해결할 수 없는 큰 사건이 도태되지 않도록 계속 언급하고 생각을 공유한다. 모두의 동참의지를 일어서게 만들고 전파될 수 있게 하여, 긍정적인 국민의식을 기르는 사회 운동이 될 수 있다.
+ 
 ### `yarn start`
 
 Runs the app in the development mode.<br />
@@ -12,57 +17,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
