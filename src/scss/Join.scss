@@ -1,0 +1,16 @@
+.Join-header {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(2px + 2vmin);
+  color: #585555;
+  .Join-contents {
+    width: 100%;
+    display: inline-block;
+  }
+  .Join-title{
+    text-align: center;
+    margin: 30px 0;
+  }
+}
