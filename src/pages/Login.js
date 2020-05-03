@@ -22,7 +22,7 @@ class Login extends Component {
   return (
     <div className="Login">
       <header className="Login-header">
-        <p>Talk About</p>
+        <p>Talk About!!!!</p>
         <form className="lgnForm">
           <input
             type="text"
