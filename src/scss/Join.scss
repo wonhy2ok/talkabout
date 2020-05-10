@@ -8,6 +8,12 @@
   .Join-contents {
     width: 100%;
     display: inline-block;
+    .form-group {
+      span {
+        font-size: calc(7px + 1vmin);
+        color: #df2f33;
+      }
+    }
   }
   .Join-title{
     text-align: center;
