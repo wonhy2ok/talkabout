@@ -19,36 +19,37 @@ const styles = theme =>({
 class Login extends Component {
   render() {
     const {classes} = this.props;
-  return (
-    <div className="Login">
-      <header className="Login-header">
-        <p>Talk About</p>
-        <form className="lgnForm">
-          <input
-            type="text"
-            className="form-control lgnText"
-            id="passwordInput"
-            placeholder="E-mail"
-            required
-          />
-          <input
-            type="password"
-            className="form-control lgnText"
-            id="passwordInput"
-            placeholder="Password"
-            required
-          />
-          <Button className={classes.logBtn} type="submit">Login</Button>
-        </form>
-        <p className="blk-small" >
-          지금 talk about하세요.
-          <Link className="btnJoin" to="/join">
-            회원가입
-          </Link>
-        </p>
-      </header>
-    </div>
-  );
+    
+    return (
+      <div className="Login">
+        <header className="Login-header">
+          <p>Talk About</p>
+          <form className="lgnForm">
+            <input
+              type="text"
+              className="form-control lgnText"
+              id="passwordInput"
+              placeholder="E-mail"
+              required
+            />
+            <input
+              type="password"
+              className="form-control lgnText"
+              id="passwordInput"
+              placeholder="Password"
+              required
+            />
+            <Button className={classes.logBtn} type="submit">Login</Button>
+          </form>
+          <p className="blk-small" >
+            지금 talk about하세요.
+            <Link className="btnJoin" to="/join">
+              회원가입
+            </Link>
+          </p>
+        </header>
+      </div>
+    );
   }
 }
 
