@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <Router>
         <Route exact path='/' component={Login}/>
+        <Route exact path='/login' component={Login}/>
         <Route path='/join' component={Join}/>
         <Route path='/join2' component={Join2}/>
         <Route path='/home' component={Home}/>
