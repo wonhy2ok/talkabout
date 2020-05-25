@@ -40,7 +40,7 @@ class Join2 extends Component {
         this.setState({
           isVaild: 
           <div>
-            정체가 무엇입니까?
+            잘못된 접근입니다.
           </div>
         });
       }

@@ -201,7 +201,8 @@ class Join extends Component {
     //대문자 정규표현식
     const bidParRegExp = new RegExp(/[A-Z]/);
     //특수문자 정규표현식
-    const speParRegExp = new RegExp(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi);
+    const speParRegExp = new RegExp(/[{}[\]/?.,;:|)*~`!^\-_+<>@#$%&=('"]/gi);
+    //const speParRegExp = new RegExp(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi);
 
     let passError = ""; //에러 메시지
     if(passEntered.length >= 10 && passEntered.length <20 ){

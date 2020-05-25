@@ -5,7 +5,6 @@ import "../scss/App.scss";
 import "../scss/Login.scss";
 import { withStyles } from "@material-ui/core/styles";
 import {Button } from "@material-ui/core";
-import Router from "next/router";
 
 const styles = theme =>({
   logBtn: {
@@ -39,13 +38,36 @@ class Login extends Component {
   
   //api 요청을 통한 메일 발송
   callApi = async (history) => {
-    axios.post('/api/loginUser', {userId:this.state.id, userPass:this.state.pass})
+    axios.post('/api/loginUser', {userEmail:this.state.id, userPass:this.state.pass})
     .then( response => {
+      let loginError = "";
       console.log(response);
-      if(response.data){
-        this.props.history.push("/home");
-      }else{
-        alert("로그인 실패");
+      switch(response.data){
+        case "ERR01":
+          loginError = "없는 사용자 계정입니다."; //에러 메시지
+          this.setState({
+            loginError
+          });
+          break;
+        case "ERR02":
+          loginError = "비밀번호를 확인해주세요."; //에러 메시지
+          this.setState({
+            loginError
+          });
+          break;
+        case "ERR03":
+          loginError = "인증을 진행해주세요."; //에러 메시지
+          this.setState({
+            loginError
+          });
+          break;
+        default:
+          window.sessionStorage.setItem('userId',response.data.userId);
+          window.sessionStorage.setItem('userNm',response.data.userNm);
+          window.sessionStorage.setItem('nick',response.data.nick);
+          window.sessionStorage.setItem('userRole',response.data.userRole);
+          window.sessionStorage.setItem('userState',response.data.userState);
+          this.props.history.push("/home/chat");
       }
       
     })
@@ -77,6 +99,7 @@ class Login extends Component {
               onChange={this.passChange}
               required
             />
+            <div className="errLogin" id="domainInfo">{this.state.loginError}</div>
             <Button className={classes.logBtn} onClick={e => this.callApi()}>Login</Button>
           </form>
           <p className="blk-small" >

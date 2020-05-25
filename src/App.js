@@ -1,7 +1,6 @@
 import React,{ Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Join, Login, Home, Join2 } from "./pages";
-
 class App extends Component {
   render() {
     return (

@@ -1,4 +1,6 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {Chat, UserInfo, Graph} from "./views";
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -122,6 +124,7 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
+      <Router>
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -142,26 +145,37 @@ export default function Home() {
         </div>
         <Divider />
         <List>
-          <ListItem button key='chat'>
-            <ListItemIcon><ChatIcon /></ListItemIcon>
-            <ListItemText primary='chat' />
-          </ListItem>
-          <ListItem button key='user'>
-            <ListItemIcon><AssignmentIndIcon /></ListItemIcon>
-            <ListItemText primary='user' />
-          </ListItem>
-          <ListItem button key='grape'>
-            <ListItemIcon><EqualizerIcon /></ListItemIcon>
-            <ListItemText primary='grape' />
-          </ListItem>
+          <Link to="/home/chat">
+            <ListItem button key='chat'>
+              <ListItemIcon><ChatIcon /></ListItemIcon>
+              <ListItemText primary='chat' />
+            </ListItem>
+          </Link>
+          <Link to="/home/userInfo">
+            <ListItem button key='user'>
+              <ListItemIcon><AssignmentIndIcon /></ListItemIcon>
+              <ListItemText primary='user' />
+            </ListItem>
+          </Link>
+          <Link to="/home/graph">
+            <ListItem button key='grape'>
+              <ListItemIcon><EqualizerIcon /></ListItemIcon>
+              <ListItemText primary='grape' />
+            </ListItem>
+          </Link>
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
-          test
+          <Switch>
+            <Route exact path='/home/chat' component={Chat} />
+            <Route exact path='/home/userInfo' component={UserInfo} />
+            <Route exact path='/home/graph' component={Graph} />
+          </Switch>
         </Typography>
       </main>
+      </Router>
     </div>
   );
 }
