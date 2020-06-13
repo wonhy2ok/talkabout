@@ -17,8 +17,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
-import ChatIcon from '@material-ui/icons/Chat';
+import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
+//import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import MessageIcon from '@material-ui/icons/Message';
+//import ChatIcon from '@material-ui/icons/Chat';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 
 const drawerWidth = 240;
@@ -147,13 +149,13 @@ export default function Home() {
         <List>
           <Link to="/home/chat">
             <ListItem button key='chat'>
-              <ListItemIcon><ChatIcon /></ListItemIcon>
+              <ListItemIcon><MessageIcon /></ListItemIcon>
               <ListItemText primary='chat' />
             </ListItem>
           </Link>
           <Link to="/home/userInfo">
             <ListItem button key='user'>
-              <ListItemIcon><AssignmentIndIcon /></ListItemIcon>
+              <ListItemIcon><PermContactCalendarIcon /></ListItemIcon>
               <ListItemText primary='user' />
             </ListItem>
           </Link>

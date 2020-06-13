@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 
@@ -25,7 +25,6 @@ const newChat = gql`
 let unsubscribe = null; //publish 했을때 변화
 
 export default () => (
-  
   <Query query={getChatting}>
     {({ loading, data, subscribeToMore }) => {
       if (loading) {
@@ -44,7 +43,6 @@ export default () => (
           }
         });
       }
-
       return (
         <div>
           {data.chatting.map(x => (

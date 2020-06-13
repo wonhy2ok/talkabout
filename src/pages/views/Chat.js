@@ -1,19 +1,20 @@
 import React,{ Component } from 'react';
-import { ApolloProvider } from "react-apollo";
-import { ApolloProvider as ApolloHooksProvider } from "react-apollo-hooks";
-import client from "../Apollo/apolloClient";
-import ChatLog from "./Chats/ChatLog";
-import Input from "./Chats/Input";
-
+import ChatHome from './Chats/ChatHome';
+import ChatTitle from './Chats/ChatTitle';
+import "../../scss/Chat.scss";
 class Chat extends Component {
   render() {
     return (
-      <ApolloProvider client={client}>
-        <ApolloHooksProvider client={client}>
-          <ChatLog />
-          <Input />
-        </ApolloHooksProvider>
-      </ApolloProvider>
+      <div>
+        <div className="ChatTitle">
+          <ChatTitle />
+          <hr/>
+        </div>
+        <br/>
+        <div className="ChatLog">
+          <ChatHome />
+        </div>
+      </div>
     );
   }
 }
